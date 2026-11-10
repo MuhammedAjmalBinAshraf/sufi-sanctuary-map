@@ -35,4 +35,5 @@ use the editor.
 - All interface text lives in the `en`/`ml`/`ar` dictionaries in `src/lib/i18n.tsx`, and site data carries all three languages; use logical spacing/position utilities (`ps`, `pe`, `start`, `end`, `ms`, `me`) so Arabic RTL mirrors without extra code.
 - Form validation lives in `src/lib/submission.ts` as zod schemas whose messages are i18n keys, so rules stay testable and translated in one place.
 - Display preferences (e.g. quote visibility while exploring the map) live in `src/lib/preferences.tsx` on the visitor's device, with pure helpers (`shouldShowQuote`, `parsePreferences`) so behaviour stays testable; the Settings sheet is the only place they are edited.
+- Ambient audio is mounted once inside the root's i18n provider; its device-local pause/mute preferences live in `src/lib/audio.ts` and are edited by the player so navigation never restarts playback.
 - Steward progress (visits, kept sites, submissions, corrections) is stored on the visitor's device via `src/lib/steward.tsx` until a backend exists; badge thresholds live only in `src/lib/badges.ts`.
