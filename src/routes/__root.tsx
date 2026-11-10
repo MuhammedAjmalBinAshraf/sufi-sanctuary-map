@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { Toaster } from "@/components/ui/sonner";
+import { AmbientPlayer } from "@/components/sufi/AmbientPlayer";
 import { I18nProvider } from "@/lib/i18n";
 import { PreferencesProvider } from "@/lib/preferences";
 import { StewardProvider } from "@/lib/steward";
@@ -138,6 +139,7 @@ function RootComponent() {
           <StewardProvider>
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
             <Outlet />
+            <AmbientPlayer />
             <Toaster position="top-center" />
           </StewardProvider>
         </PreferencesProvider>
